@@ -390,7 +390,6 @@ garbage
 _generic_linux_structs.h
 _portable_structs.macros
 _unknown_types.macros
-types  _ linux.1.14.n
 liblinux/
 liblinux/*
 bootstrap/
