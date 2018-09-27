@@ -24,7 +24,7 @@ Object.keys(data).forEach((name) => {
 	start(util.format("liblinux/headers/ITypes/Macros/4.14.n/Variable%s.macros", entry.cpptype));
 	
     entry.members.forEach((member) => {
-        appendLn(util.format("DEFINE_MEMBER_2(%s, %s)", member.cpptype, member.stripped_name));
+        appendLn(util.format("DEFINE_MEMBER_2(%s, %s)", member.msft, member.stripped_name));
     });
 	save();
 	
