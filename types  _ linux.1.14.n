@@ -348,6 +348,9 @@ struct keyring_index_key              , keyring_index_key             , keyRing_
 struct keyring_index_key              , keyring_index_key             , keyRing_index_key             , description                    , description                                                 , description
 struct keyring_index_key              , keyring_index_key             , keyRing_index_key             , desc_len                       , desc_len                                                    , desc_len
                                       
+
+struct task_struct                    , task                          , task                          , xenus                          , xenus                                                       , xenus
+struct task_struct                    , task                          , task                          , rcu                            , rcu                                                         , rcu
 struct task_struct                    , task                          , task                          , thread_info                    , thread_info                                                 , thread_info
 struct task_struct                    , task                          , task                          , state                          , state                                                       , state
 struct task_struct                    , task                          , task                          , stack                          , stack                                                       , stack
@@ -442,7 +445,8 @@ struct task_struct                    , task                          , task    
 struct task_struct                    , task                          , task                          , sas_ss_size                    , sas_ss_size                                                 , sas_ss_size
 struct task_struct                    , task                          , task                          , sas_ss_flags                   , sas_ss_flags                                                , sas_ss_flags
 struct task_struct                    , task                          , task                          , thread                         , thread                                                      , thread
-                                      
+struct task_struct                    , task                          , task                          , alloc_lock                     , alloc_lock                                                  , alloc_lock
+
 struct fwnode_operations              , fwnode_operations             , FWNode_operations             , get                            , get                                                         , get
 struct fwnode_operations              , fwnode_operations             , FWNode_operations             , put                            , put                                                         , put
 struct fwnode_operations              , fwnode_operations             , FWNode_operations             , device_is_available            , device_is_available                                         , device_is_available
@@ -1688,8 +1692,24 @@ struct dentry_stat_t                  , dentry_stat                   , DEntry_s
 struct dentry_stat_t                  , dentry_stat                   , DEntry_stat                    , want_pages                     , want_pages                                                  , want_pages
 struct dentry_stat_t                  , dentry_stat                   , DEntry_stat                    , dummy                          , dummy                                                       , dummy 
                                       
-struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , flags                          , flags                                                       , flags
-struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , private                        , private                                                     , private
-struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , entry                          , entry                                                       , entry
-struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , func                           , func                                                        , func 
+struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , flags                           , flags                                                       , flags
+struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , private                         , private                                                     , private
+struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , entry                           , entry                                                       , entry
+struct wait_queue_entry               , wait_queue_entry              , wait_queue_entry              , func                            , func                                                        , func 
+                                                                                                                                        
+                                                                                                                                        
+struct sched_attr                     , sched_attr                    , sched_attr                    , size                            , size                                                        , size
+struct sched_attr                     , sched_attr                    , sched_attr                    , sched_policy                    , sched_policy                                                , sched_policy
+struct sched_attr                     , sched_attr                    , sched_attr                    , sched_flags                     , sched_flags                                                 , sched_flags
+struct sched_attr                     , sched_attr                    , sched_attr                    , sched_nice                      , sched_nice                                                  , sched_nice
+struct sched_attr                     , sched_attr                    , sched_attr                    , sched_priority                  , sched_priority                                              , sched_priority
+struct sched_attr                     , sched_attr                    , sched_attr                    , sched_runtime                   , sched_runtime                                               , sched_runtime
+struct sched_attr                     , sched_attr                    , sched_attr                    , sched_deadline                  , sched_deadline                                              , sched_deadline
+struct sched_attr                     , sched_attr                    , sched_attr                    , sched_period                    , sched_period                                                , sched_period
+                                                                                                                                                                                                      
+																																																	  
+struct preempt_notifier               , preempt_notifier              , preempt_notifier              , link                            , link                                                        , link
+struct preempt_notifier               , preempt_notifier              , preempt_notifier              , ops                             , ops                                                         , ops
 
+struct delayed_call                   , delayed_call                  , delayed_call                  , fn                              , fn                                                          , fn
+struct delayed_call                   , delayed_call                  , delayed_call                  , arg                             , arg                                                         , arg

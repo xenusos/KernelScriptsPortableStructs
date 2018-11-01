@@ -11,5 +11,3 @@ node "generate _unknown_types.macros.js"
 node "generate test.js"
 node "generate _portable_structs.macros.js"
 node "generate liblinux.js"
-
-generate _liblinux.js
