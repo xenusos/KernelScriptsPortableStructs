@@ -1,12 +1,12 @@
 const fs = require("fs");
 const util = require("util");
-var data =  require("./compile.js");
+const data =  require("./compile.js");
+
 var buffer = "";
 
 function appendLn(data) {
-	buffer += data += '\r\n';
+    buffer += data += '\r\n';
 }
-
 
 Object.keys(data).forEach((name) => {
     var entry  = data[name];
@@ -14,7 +14,7 @@ Object.keys(data).forEach((name) => {
     entry.members.forEach((member) => {
         appendLn(util.format("PS_SRC_FUNC_ADD_TYPE_MEMBER(%s, %s, %s, %s);", entry.type, entry.name, member.name, member.stripped_name));
     });
-	appendLn("");
+    appendLn("");
 });
 
 fs.writeFileSync("bootstrap/_portable_structs.macros", buffer, "utf8");

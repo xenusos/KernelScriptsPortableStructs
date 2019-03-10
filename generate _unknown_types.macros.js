@@ -4,11 +4,11 @@ var data =  require("./compile.js");
 var buffer = "";
 
 function appendLn(data) {
-	buffer += data += '\r\n';
+    buffer += data += '\r\n';
 }
 
 Object.keys(data).forEach((name) => {
-	appendLn(util.format("DEFINE_TYPE(%s, %s);", data[name].type, data[name].name));
+    appendLn(util.format("DEFINE_TYPE(%s, %s);", data[name].type, data[name].name));
 });
 
 fs.writeFileSync("bootstrap/_unknown_types.macros", buffer, "utf8");
